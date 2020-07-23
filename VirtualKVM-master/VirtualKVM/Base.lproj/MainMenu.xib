@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14490.70"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
+            <connections>
+                <outlet property="delegate" destination="Voe-Tx-rLC" id="GzC-gU-4Uq"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customObject id="lVf-z2-2S9" customClass="KVMController">
+            <connections>
+                <outlet property="connectionStatusMenuItem" destination="9wc-aF-0Uk" id="wCh-Cf-J3x"/>
+                <outlet property="menu" destination="ZQU-Qi-o3m" id="mfM-jk-6Qf"/>
+                <outlet property="saveDebugLogsMenuItem" destination="LLP-n0-Bdl" id="0OX-NE-82h"/>
+                <outlet property="toggleBluetoothMenuItem" destination="5RI-2K-t5L" id="q2q-LS-th5"/>
+                <outlet property="toggleDisplayMenuItem" destination="Beb-Ne-3cM" id="e2R-MG-QZB"/>
+                <outlet property="toggleSleepMenuItem" destination="pFx-q3-0Qh" id="58O-CE-q2a"/>
+            </connections>
+        </customObject>
+        <customObject id="Voe-Tx-rLC" customClass="KVMAppDelegate" customModule="VirtualKVM" customModuleProvider="target"/>
+        <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
+        <customObject id="p4a-DV-d6K" customClass="SUUpdater"/>
+        <menu id="ZQU-Qi-o3m">
+            <items>
+                <menuItem title="Connection: Unknown" enabled="NO" id="9wc-aF-0Uk">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="oPG-AQ-XoO"/>
+                <menuItem title="Auto Toggle Bluetooth" state="on" id="5RI-2K-t5L">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="toggleBluetoothOption:" target="lVf-z2-2S9" id="iuw-QN-tOI"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Auto Toggle Display" state="on" id="Beb-Ne-3cM">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="toggleTargetDisplayOption:" target="lVf-z2-2S9" id="b5O-ZI-yr6"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Prevent Display Sleep" state="on" id="pFx-q3-0Qh">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="toggleSleepOption:" target="lVf-z2-2S9" id="NHc-LJ-hGX"/>
+                    </connections>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="aOi-yt-xjg"/>
+                <menuItem title="Advanced" id="XwW-tM-qCz">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="Advanced" id="D72-9E-CLH">
+                        <items>
+                            <menuItem title="Save Debug Logs..." id="LLP-n0-Bdl">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="toggleSaveDebugLogs:" target="lVf-z2-2S9" id="qLM-Aa-pJh"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="Check for updates..." id="6tr-dc-SKT">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="checkForUpdates:" target="p4a-DV-d6K" id="7jW-jm-RwG"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Quit Virtual KVM" id="o6B-8G-HZL">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="quit:" target="lVf-z2-2S9" id="RBq-GN-o7c"/>
+                    </connections>
+                </menuItem>
+            </items>
+        </menu>
+    </objects>
+</document>
